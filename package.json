@@ -1,0 +1,17 @@
+{
+  "name": "tinygo-wasm-js",
+  "version": "0.1.0",
+  "description": "Convert Golang to JS",
+  "main": "index.js",
+  "repository": "https://github.com/rmarchet/tinygo-wasm-js.git",
+  "author": "Roberto Marchetti <rmarchet@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^3.0.3",
+    "dotenv": "^16.4.7"
+  },
+  "scripts": {
+    "start": "browser-sync start -c ./browserstack-config.js --files ./htdocs --server ./htdocs -w",
+    "build": "tinygo build -o main.wasm -target wasm ./main.go && cp $(go env GOROOT)/misc/wasm/wasm_exec.js ."
+  }
+}
