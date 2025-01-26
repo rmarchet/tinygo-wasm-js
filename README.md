@@ -45,7 +45,7 @@ or
 ```
 $ npm run build
 ```
-If everithing goes fine, the main.wasm is created in the ./htdocs folder
+If everithing goes fine, the main.wasm is created in the ./httpdocs folder
 
 ### Start local HTTP server
 This demo project comes with browsersync which runs a local HTTP server and reloads the page everytime there's a change in the files.

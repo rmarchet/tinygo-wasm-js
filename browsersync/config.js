@@ -1,4 +1,4 @@
-const corsMiddleware = require('./browsersync/cors.js')
+const corsMiddleware = require('./cors.js')
 require('dotenv').config({ path: '../.env' }) // Load .env file from ../ since we run it from ./local
 
 const host = process.env.HOST ?? 'localhost'
