@@ -1,7 +1,6 @@
 
 package main
 
-// import "github.com/mailupinc/bee-bumper/bumper"
 import (
     "strconv"
     "github.com/google/uuid"
@@ -13,9 +12,9 @@ func addFunction(this js.Value, p []js.Value) interface{} {
     return js.ValueOf("sum is: " + str)
 }
 
-// To make this function callable from JavaScript, 
-// we need to add the: "export add" comment above the function
-
+// To make functions callable from JavaScript,
+// we need to add: "//export xyz" comment above the function
+//export add
 func add(x int, y int) int {
     return x + y;
 }
@@ -38,8 +37,6 @@ func concatenate(a string, b string) string {
 // That will be run. In our example, we won't need this
 func main() {
     c := make(chan struct{}, 0)
-
-    js.Global().Set("addFunc", js.FuncOf(addFunction))
     js.Global().Set("uuidFunc", js.FuncOf(uuidFunction))
 
     <-c

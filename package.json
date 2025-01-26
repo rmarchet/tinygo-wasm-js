@@ -6,12 +6,19 @@
   "repository": "https://github.com/rmarchet/tinygo-wasm-js.git",
   "author": "Roberto Marchetti <rmarchet@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "tinygo",
+    "golang",
+    "wasm",
+    "js"
+  ],
   "devDependencies": {
     "browser-sync": "^3.0.3",
     "dotenv": "^16.4.7"
   },
   "scripts": {
     "start": "browser-sync start -c ./browserstack-config.js --files ./htdocs --server ./htdocs -w",
-    "build": "tinygo build -o main.wasm -target wasm ./main.go && cp $(go env GOROOT)/misc/wasm/wasm_exec.js ."
+    "prepare": "cp $(go env GOROOT)/misc/wasm/wasm_exec.js ./htdocs/",
+    "build": "tinygo build -o htdocs/main.wasm -target wasm ./src/main.go"
   }
 }

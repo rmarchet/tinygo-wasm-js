@@ -2,18 +2,54 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World - Go</title>
+    <title>Go to JavaScript using TinyGo and WASM</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        font-size: 1.05rem;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+        float: right;
+      }
+      code {
+        background: #f4f4f4;
+        border: 1px solid #e1e1e1;
+        border-radius: 5px;
+        display: inline-block;
+        padding: 5px;
+        margin: 5px;
+      }
+      #output {
+        background: #f4f4f4;
+        border-left: 5px solid #614fe8;
+        color: #666;
+        display: block;
+        padding: 10px;
+        margin: 20px 0;
+        max-width: 50%;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello World - Go</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/WebAssembly_Logo.svg/240px-WebAssembly_Logo.svg.png" alt="WASM" />
+    <h1>Go to JavaScript using TinyGo and WASM</h1>
 
-    <code>
+    <code id="output">
       code
     </code>
     <!-- 
     The wasm_exec.js must come before our Javascript (index.js), 
     as it defines some global objects 
     -->
+    <p>
+      The functions executed as <code>wasm.xyz()</code> are exported using the <code>//export xyz</code> comment.
+    </p>
+    <p>
+      The <code>uuidFunc()</code> function is invoked directly because the Go code uses <code>js.Global()</code> to set is as global.
+    </p>
     <script src="./wasm_exec.js"></script>
     <script type="module" src="./index.js"></script>
   </body>
