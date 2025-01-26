@@ -4,49 +4,7 @@
     <meta charset="UTF-8" />
     <title>Go to JavaScript using TinyGo and WASM</title>
     <link rel="icon" href="favicon.ico" />
-    <style>
-      html {
-        background-color: #e3e3e3;
-        margin: 0px;
-        padding: 20px;
-      }
-      body {
-        background-color: white;
-        border: 1px solid #d3d3d3 ;
-        border-radius: 5px;
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        margin: auto;
-        font-size: 1.005rem;
-        max-width: 920px;
-      }
-      h1 {
-        color: #614fe8;
-        margin-top: 0;
-      }
-      img {
-        width: 100px;
-        height: 100px;
-        float: right;
-      }
-      code {
-        background: #f4f4f4;
-        border: 1px solid #e1e1e1;
-        border-radius: 5px;
-        display: inline-block;
-        padding: 5px;
-        margin: 5px;
-      }
-      #output {
-        background: #f4f4f4;
-        border-left: 5px solid #614fe8;
-        color: #666;
-        display: block;
-        padding: 10px;
-        margin: 20px 0;
-        max-width: 80%;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/WebAssembly_Logo.svg/240px-WebAssembly_Logo.svg.png" alt="WASM" />
@@ -71,6 +29,10 @@
       cannot be used for arguments nor return values.<br />
       To make it work, we need to use the <code>js.Value</code> type. Please take a look at the implementation
       of the <code>concatenateFunc</code> function in the Go code.
+    </p>
+    <p>
+      Considering the different encoding formats of strings and the various implementation approaches, 
+      standardizing strings in Wasm is an extremely complex task
     </p>
     <script type="module" src="./index.js"></script>
   </body>

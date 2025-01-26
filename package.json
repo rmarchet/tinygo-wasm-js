@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "browser-sync start -c ./browsersync/config.js --files ./httpdocs --server ./httpdocs -w",
-    "prepare": "cp $(go env GOROOT)/misc/wasm/wasm_exec.js ./httpdocs/",
+    "prepare": "cp $(tinygo env TINYGOROOT)/targets/wasm_exec.js ./httpdocs/",
     "build": "tinygo build -o httpdocs/main.wasm -target wasm ./src/main.go"
   }
 }
