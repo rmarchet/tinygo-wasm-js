@@ -3,11 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <title>Go to JavaScript using TinyGo and WASM</title>
+    <link rel="icon" href="favicon.ico" />
     <style>
+      html {
+        background-color: #e3e3e3;
+        margin: 0px;
+        padding: 20px;
+      }
       body {
+        background-color: white;
+        border: 1px solid #d3d3d3 ;
+        border-radius: 5px;
         font-family: Arial, sans-serif;
-        margin: 20px;
-        font-size: 1.05rem;
+        padding: 20px;
+        margin: auto;
+        font-size: 1.005rem;
+        max-width: 920px;
+      }
+      h1 {
+        color: #614fe8;
+        margin-top: 0;
       }
       img {
         width: 100px;
@@ -29,7 +44,7 @@
         display: block;
         padding: 10px;
         margin: 20px 0;
-        max-width: 50%;
+        max-width: 80%;
       }
     </style>
   </head>
@@ -45,7 +60,7 @@
     as it defines some global objects 
     -->
     <p>
-      The functions executed as <code>wasm.xyz()</code> are exported using the <code>//export xyz</code> comment.
+      The functions executed as <code>wasm.xyz()</code> are exported thanks to the <code>//export xyz</code> comment.
     </p>
     <p>
       The <code>uuidFunc()</code> function is invoked directly because the Go code uses <code>js.Global()</code> to set is as global.
