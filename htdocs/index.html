@@ -49,8 +49,14 @@
     </p>
     <p>
       The <code>uuidFunc()</code> function is invoked directly because the Go code uses <code>js.Global()</code> to set is as global.
+      <br />Its implementation is in the Go library <code>github.com/google/uuid</code>.
     </p>
-    <script src="./wasm_exec.js"></script>
+    <p>
+      <code>wasm.concatenate('a', 'b')</code> doesn't work because strings are not a native built-in type in WebAssembly so they
+      cannot be used for arguments nor return values.<br />
+      To make it work, we need to use the <code>js.Value</code> type. Please take a look at the implementation
+      of the <code>concatenateFunc</code> function in the Go code.
+    </p>
     <script type="module" src="./index.js"></script>
   </body>
 </html>

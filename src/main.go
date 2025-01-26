@@ -28,9 +28,15 @@ func uuidFunction(this js.Value, p []js.Value) interface{} {
     return js.ValueOf("uuid: " + uuid.NewString())
 }
 
+// This one will never work in WASM, because we are returning a string
 //export concatenate
 func concatenate(a string, b string) string {
     return a + b;
+}
+
+func concatenate2(this js.Value, p []js.Value) interface{} {
+    concat := p[0].String() + p[1].String()
+    return js.ValueOf(concat);
 }
 
 // Declare a main function, this is the entrypoint into our go module
@@ -38,6 +44,7 @@ func concatenate(a string, b string) string {
 func main() {
     c := make(chan struct{}, 0)
     js.Global().Set("uuidFunc", js.FuncOf(uuidFunction))
+    js.Global().Set("concatenateFunc", js.FuncOf(concatenate2))
 
     <-c
 }
